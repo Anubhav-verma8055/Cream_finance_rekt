@@ -1,0 +1,968 @@
+{
+	"id": "58a54eca5d4eec6706461c45ed150335",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.24",
+	"solcLongVersion": "0.8.24+commit.e11b9ed9",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.19;\n\ninterface IERC3156FlashBorrower {\n    /**\n     * @notice Receive a flash loan.\n     * @param initiator The initiator of the loan.\n     * @param token The loan currency.\n     * @param amount The amount of tokens lent.\n     * @param fee The additional amount of tokens to repay.\n     * @param data Arbitrary data structure, intended to contain user-defined parameters.\n     * @return The keccak256 hash of \"ERC3156FlashBorrower.onFlashLoan\"\n     */\n    function onFlashLoan(\n        address initiator,\n        address token,\n        uint256 amount,\n        uint256 fee,\n        bytes calldata data\n    ) external returns (bytes32);\n}\n\ninterface IERC3156FlashLender {\n    /**\n     * @notice The amount of currency available to be lent.\n     * @param token The loan currency.\n     * @return The amount of `token` that can be borrowed.\n     */\n    function maxFlashLoan(address token) external view returns (uint256);\n\n    /**\n     * @notice The fee to be charged for a given loan.\n     * @param token The loan currency.\n     * @param amount The amount of tokens lent.\n     * @return The amount of `token` to be charged for the loan, on top of the returned principal.\n     */\n    function flashFee(address token, uint256 amount) external view returns (uint256);\n\n    /**\n     * @notice Initiate a flash loan.\n     * @param receiver The receiver of the tokens, and the receiver of the flash callback.\n     * @param token The loan currency.\n     * @param amount The amount of tokens lent.\n     * @param data Arbitrary data structure, intended to contain user-defined parameters.\n     */\n    function flashLoan(\n        IERC3156FlashBorrower receiver,\n        address token,\n        uint256 amount,\n        bytes calldata data\n    ) external returns (bool);\n}\n"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": false,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol": {
+				"IERC3156FlashBorrower": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "initiator",
+									"type": "address"
+								},
+								{
+									"internalType": "address",
+									"name": "token",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amount",
+									"type": "uint256"
+								},
+								{
+									"internalType": "uint256",
+									"name": "fee",
+									"type": "uint256"
+								},
+								{
+									"internalType": "bytes",
+									"name": "data",
+									"type": "bytes"
+								}
+							],
+							"name": "onFlashLoan",
+							"outputs": [
+								{
+									"internalType": "bytes32",
+									"name": "",
+									"type": "bytes32"
+								}
+							],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {
+							"onFlashLoan(address,address,uint256,uint256,bytes)": {
+								"params": {
+									"amount": "The amount of tokens lent.",
+									"data": "Arbitrary data structure, intended to contain user-defined parameters.",
+									"fee": "The additional amount of tokens to repay.",
+									"initiator": "The initiator of the loan.",
+									"token": "The loan currency."
+								},
+								"returns": {
+									"_0": "The keccak256 hash of \"ERC3156FlashBorrower.onFlashLoan\""
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"onFlashLoan(address,address,uint256,uint256,bytes)": "23e30c8b"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"initiator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"fee\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onFlashLoan\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"onFlashLoan(address,address,uint256,uint256,bytes)\":{\"params\":{\"amount\":\"The amount of tokens lent.\",\"data\":\"Arbitrary data structure, intended to contain user-defined parameters.\",\"fee\":\"The additional amount of tokens to repay.\",\"initiator\":\"The initiator of the loan.\",\"token\":\"The loan currency.\"},\"returns\":{\"_0\":\"The keccak256 hash of \\\"ERC3156FlashBorrower.onFlashLoan\\\"\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"onFlashLoan(address,address,uint256,uint256,bytes)\":{\"notice\":\"Receive a flash loan.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol\":\"IERC3156FlashBorrower\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol\":{\"keccak256\":\"0xd819c1d5354bdf904b0f9bd0bf8be40190de8ca099be1b33b562907f08000d43\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e3fb3cbd97c7a2f16530ed977cbc675ef57c96363f67aee5fc21cf692894e873\",\"dweb:/ipfs/QmfHTwtkFWKdzrTJNTz9eeuUNmQgjE5P94kQvskLPcGxVX\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {
+							"onFlashLoan(address,address,uint256,uint256,bytes)": {
+								"notice": "Receive a flash loan."
+							}
+						},
+						"version": 1
+					}
+				},
+				"IERC3156FlashLender": {
+					"abi": [
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "token",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amount",
+									"type": "uint256"
+								}
+							],
+							"name": "flashFee",
+							"outputs": [
+								{
+									"internalType": "uint256",
+									"name": "",
+									"type": "uint256"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "contract IERC3156FlashBorrower",
+									"name": "receiver",
+									"type": "address"
+								},
+								{
+									"internalType": "address",
+									"name": "token",
+									"type": "address"
+								},
+								{
+									"internalType": "uint256",
+									"name": "amount",
+									"type": "uint256"
+								},
+								{
+									"internalType": "bytes",
+									"name": "data",
+									"type": "bytes"
+								}
+							],
+							"name": "flashLoan",
+							"outputs": [
+								{
+									"internalType": "bool",
+									"name": "",
+									"type": "bool"
+								}
+							],
+							"stateMutability": "nonpayable",
+							"type": "function"
+						},
+						{
+							"inputs": [
+								{
+									"internalType": "address",
+									"name": "token",
+									"type": "address"
+								}
+							],
+							"name": "maxFlashLoan",
+							"outputs": [
+								{
+									"internalType": "uint256",
+									"name": "",
+									"type": "uint256"
+								}
+							],
+							"stateMutability": "view",
+							"type": "function"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {
+							"flashFee(address,uint256)": {
+								"params": {
+									"amount": "The amount of tokens lent.",
+									"token": "The loan currency."
+								},
+								"returns": {
+									"_0": "The amount of `token` to be charged for the loan, on top of the returned principal."
+								}
+							},
+							"flashLoan(address,address,uint256,bytes)": {
+								"params": {
+									"amount": "The amount of tokens lent.",
+									"data": "Arbitrary data structure, intended to contain user-defined parameters.",
+									"receiver": "The receiver of the tokens, and the receiver of the flash callback.",
+									"token": "The loan currency."
+								}
+							},
+							"maxFlashLoan(address)": {
+								"params": {
+									"token": "The loan currency."
+								},
+								"returns": {
+									"_0": "The amount of `token` that can be borrowed."
+								}
+							}
+						},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "",
+							"opcodes": "",
+							"sourceMap": ""
+						},
+						"gasEstimates": null,
+						"legacyAssembly": null,
+						"methodIdentifiers": {
+							"flashFee(address,uint256)": "d9d98ce4",
+							"flashLoan(address,address,uint256,bytes)": "5cffe9de",
+							"maxFlashLoan(address)": "613255ab"
+						}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"flashFee\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"contract IERC3156FlashBorrower\",\"name\":\"receiver\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"flashLoan\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"name\":\"maxFlashLoan\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"flashFee(address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens lent.\",\"token\":\"The loan currency.\"},\"returns\":{\"_0\":\"The amount of `token` to be charged for the loan, on top of the returned principal.\"}},\"flashLoan(address,address,uint256,bytes)\":{\"params\":{\"amount\":\"The amount of tokens lent.\",\"data\":\"Arbitrary data structure, intended to contain user-defined parameters.\",\"receiver\":\"The receiver of the tokens, and the receiver of the flash callback.\",\"token\":\"The loan currency.\"}},\"maxFlashLoan(address)\":{\"params\":{\"token\":\"The loan currency.\"},\"returns\":{\"_0\":\"The amount of `token` that can be borrowed.\"}}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"flashFee(address,uint256)\":{\"notice\":\"The fee to be charged for a given loan.\"},\"flashLoan(address,address,uint256,bytes)\":{\"notice\":\"Initiate a flash loan.\"},\"maxFlashLoan(address)\":{\"notice\":\"The amount of currency available to be lent.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol\":\"IERC3156FlashLender\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol\":{\"keccak256\":\"0xd819c1d5354bdf904b0f9bd0bf8be40190de8ca099be1b33b562907f08000d43\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://e3fb3cbd97c7a2f16530ed977cbc675ef57c96363f67aee5fc21cf692894e873\",\"dweb:/ipfs/QmfHTwtkFWKdzrTJNTz9eeuUNmQgjE5P94kQvskLPcGxVX\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {
+							"flashFee(address,uint256)": {
+								"notice": "The fee to be charged for a given loan."
+							},
+							"flashLoan(address,address,uint256,bytes)": {
+								"notice": "Initiate a flash loan."
+							},
+							"maxFlashLoan(address)": {
+								"notice": "The amount of currency available to be lent."
+							}
+						},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol": {
+				"ast": {
+					"absolutePath": "Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol",
+					"exportedSymbols": {
+						"IERC3156FlashBorrower": [
+							18
+						],
+						"IERC3156FlashLender": [
+							52
+						]
+					},
+					"id": 53,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".19"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IERC3156FlashBorrower",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 18,
+							"linearizedBaseContracts": [
+								18
+							],
+							"name": "IERC3156FlashBorrower",
+							"nameLocation": "68:21:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 2,
+										"nodeType": "StructuredDocumentation",
+										"src": "96:408:0",
+										"text": " @notice Receive a flash loan.\n @param initiator The initiator of the loan.\n @param token The loan currency.\n @param amount The amount of tokens lent.\n @param fee The additional amount of tokens to repay.\n @param data Arbitrary data structure, intended to contain user-defined parameters.\n @return The keccak256 hash of \"ERC3156FlashBorrower.onFlashLoan\""
+									},
+									"functionSelector": "23e30c8b",
+									"id": 17,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "onFlashLoan",
+									"nameLocation": "518:11:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 13,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 4,
+												"mutability": "mutable",
+												"name": "initiator",
+												"nameLocation": "547:9:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "539:17:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 3,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "539:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 6,
+												"mutability": "mutable",
+												"name": "token",
+												"nameLocation": "574:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "566:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 5,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "566:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 8,
+												"mutability": "mutable",
+												"name": "amount",
+												"nameLocation": "597:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "589:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 7,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "589:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 10,
+												"mutability": "mutable",
+												"name": "fee",
+												"nameLocation": "621:3:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "613:11:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 9,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "613:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 12,
+												"mutability": "mutable",
+												"name": "data",
+												"nameLocation": "649:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "634:19:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_calldata_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 11,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "634:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "529:130:0"
+									},
+									"returnParameters": {
+										"id": 16,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 15,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 17,
+												"src": "678:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes32",
+													"typeString": "bytes32"
+												},
+												"typeName": {
+													"id": 14,
+													"name": "bytes32",
+													"nodeType": "ElementaryTypeName",
+													"src": "678:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes32",
+														"typeString": "bytes32"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "677:9:0"
+									},
+									"scope": 18,
+									"src": "509:178:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 53,
+							"src": "58:631:0",
+							"usedErrors": [],
+							"usedEvents": []
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "IERC3156FlashLender",
+							"contractDependencies": [],
+							"contractKind": "interface",
+							"fullyImplemented": false,
+							"id": 52,
+							"linearizedBaseContracts": [
+								52
+							],
+							"name": "IERC3156FlashLender",
+							"nameLocation": "701:19:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"documentation": {
+										"id": 19,
+										"nodeType": "StructuredDocumentation",
+										"src": "727:169:0",
+										"text": " @notice The amount of currency available to be lent.\n @param token The loan currency.\n @return The amount of `token` that can be borrowed."
+									},
+									"functionSelector": "613255ab",
+									"id": 26,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "maxFlashLoan",
+									"nameLocation": "910:12:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 22,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 21,
+												"mutability": "mutable",
+												"name": "token",
+												"nameLocation": "931:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 26,
+												"src": "923:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 20,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "923:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "922:15:0"
+									},
+									"returnParameters": {
+										"id": 25,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 24,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 26,
+												"src": "961:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 23,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "961:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "960:9:0"
+									},
+									"scope": 52,
+									"src": "901:69:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 27,
+										"nodeType": "StructuredDocumentation",
+										"src": "976:252:0",
+										"text": " @notice The fee to be charged for a given loan.\n @param token The loan currency.\n @param amount The amount of tokens lent.\n @return The amount of `token` to be charged for the loan, on top of the returned principal."
+									},
+									"functionSelector": "d9d98ce4",
+									"id": 36,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "flashFee",
+									"nameLocation": "1242:8:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 32,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 29,
+												"mutability": "mutable",
+												"name": "token",
+												"nameLocation": "1259:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 36,
+												"src": "1251:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 28,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1251:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 31,
+												"mutability": "mutable",
+												"name": "amount",
+												"nameLocation": "1274:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 36,
+												"src": "1266:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 30,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "1266:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1250:31:0"
+									},
+									"returnParameters": {
+										"id": 35,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 34,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 36,
+												"src": "1305:7:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 33,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "1305:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1304:9:0"
+									},
+									"scope": 52,
+									"src": "1233:81:0",
+									"stateMutability": "view",
+									"virtual": false,
+									"visibility": "external"
+								},
+								{
+									"documentation": {
+										"id": 37,
+										"nodeType": "StructuredDocumentation",
+										"src": "1320:317:0",
+										"text": " @notice Initiate a flash loan.\n @param receiver The receiver of the tokens, and the receiver of the flash callback.\n @param token The loan currency.\n @param amount The amount of tokens lent.\n @param data Arbitrary data structure, intended to contain user-defined parameters."
+									},
+									"functionSelector": "5cffe9de",
+									"id": 51,
+									"implemented": false,
+									"kind": "function",
+									"modifiers": [],
+									"name": "flashLoan",
+									"nameLocation": "1651:9:0",
+									"nodeType": "FunctionDefinition",
+									"parameters": {
+										"id": 47,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 40,
+												"mutability": "mutable",
+												"name": "receiver",
+												"nameLocation": "1692:8:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 51,
+												"src": "1670:30:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_contract$_IERC3156FlashBorrower_$18",
+													"typeString": "contract IERC3156FlashBorrower"
+												},
+												"typeName": {
+													"id": 39,
+													"nodeType": "UserDefinedTypeName",
+													"pathNode": {
+														"id": 38,
+														"name": "IERC3156FlashBorrower",
+														"nameLocations": [
+															"1670:21:0"
+														],
+														"nodeType": "IdentifierPath",
+														"referencedDeclaration": 18,
+														"src": "1670:21:0"
+													},
+													"referencedDeclaration": 18,
+													"src": "1670:21:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_contract$_IERC3156FlashBorrower_$18",
+														"typeString": "contract IERC3156FlashBorrower"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 42,
+												"mutability": "mutable",
+												"name": "token",
+												"nameLocation": "1718:5:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 51,
+												"src": "1710:13:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_address",
+													"typeString": "address"
+												},
+												"typeName": {
+													"id": 41,
+													"name": "address",
+													"nodeType": "ElementaryTypeName",
+													"src": "1710:7:0",
+													"stateMutability": "nonpayable",
+													"typeDescriptions": {
+														"typeIdentifier": "t_address",
+														"typeString": "address"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 44,
+												"mutability": "mutable",
+												"name": "amount",
+												"nameLocation": "1741:6:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 51,
+												"src": "1733:14:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_uint256",
+													"typeString": "uint256"
+												},
+												"typeName": {
+													"id": 43,
+													"name": "uint256",
+													"nodeType": "ElementaryTypeName",
+													"src": "1733:7:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_uint256",
+														"typeString": "uint256"
+													}
+												},
+												"visibility": "internal"
+											},
+											{
+												"constant": false,
+												"id": 46,
+												"mutability": "mutable",
+												"name": "data",
+												"nameLocation": "1772:4:0",
+												"nodeType": "VariableDeclaration",
+												"scope": 51,
+												"src": "1757:19:0",
+												"stateVariable": false,
+												"storageLocation": "calldata",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bytes_calldata_ptr",
+													"typeString": "bytes"
+												},
+												"typeName": {
+													"id": 45,
+													"name": "bytes",
+													"nodeType": "ElementaryTypeName",
+													"src": "1757:5:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bytes_storage_ptr",
+														"typeString": "bytes"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1660:122:0"
+									},
+									"returnParameters": {
+										"id": 50,
+										"nodeType": "ParameterList",
+										"parameters": [
+											{
+												"constant": false,
+												"id": 49,
+												"mutability": "mutable",
+												"name": "",
+												"nameLocation": "-1:-1:-1",
+												"nodeType": "VariableDeclaration",
+												"scope": 51,
+												"src": "1801:4:0",
+												"stateVariable": false,
+												"storageLocation": "default",
+												"typeDescriptions": {
+													"typeIdentifier": "t_bool",
+													"typeString": "bool"
+												},
+												"typeName": {
+													"id": 48,
+													"name": "bool",
+													"nodeType": "ElementaryTypeName",
+													"src": "1801:4:0",
+													"typeDescriptions": {
+														"typeIdentifier": "t_bool",
+														"typeString": "bool"
+													}
+												},
+												"visibility": "internal"
+											}
+										],
+										"src": "1800:6:0"
+									},
+									"scope": 52,
+									"src": "1642:165:0",
+									"stateMutability": "nonpayable",
+									"virtual": false,
+									"visibility": "external"
+								}
+							],
+							"scope": 53,
+							"src": "691:1118:0",
+							"usedErrors": [],
+							"usedEvents": []
+						}
+					],
+					"src": "32:1778:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

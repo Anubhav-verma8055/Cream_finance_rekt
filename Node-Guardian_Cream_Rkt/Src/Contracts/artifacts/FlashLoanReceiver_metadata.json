@@ -1,0 +1,186 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_flashLender",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "executeFlashLoan",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "flashLender",
+				"outputs": [
+					{
+						"internalType": "contract IERC3156FlashLender",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "initiator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "onFlashLoan",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "withdrawTokens",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"onFlashLoan(address,address,uint256,uint256,bytes)": {
+					"params": {
+						"amount": "The amount of tokens lent.",
+						"data": "Arbitrary data structure, intended to contain user-defined parameters.",
+						"fee": "The additional amount of tokens to repay.",
+						"initiator": "The initiator of the loan.",
+						"token": "The loan currency."
+					},
+					"returns": {
+						"_0": "The keccak256 hash of \"ERC3156FlashBorrower.onFlashLoan\""
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"onFlashLoan(address,address,uint256,uint256,bytes)": {
+					"notice": "Receive a flash loan."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Node-Guardian_Cream_Rkt/Src/Contracts/FlashLoanReceiver.sol": "FlashLoanReceiver"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"Node-Guardian_Cream_Rkt/Src/Contracts/FlashLoanReceiver.sol": {
+			"keccak256": "0x422cfba319b03ea403d7a243b3f1a1686be04634f2b6d43d2fde6a901406c382",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2d18569aa2857974d0ba03c3aa644e068b64cffe2d5fece999659bd47eba8b44",
+				"dweb:/ipfs/QmaNNQqPzeUtuUYnTPRsoMDxQxxhme9T8ETfCGmcaKKcEA"
+			]
+		},
+		"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol": {
+			"keccak256": "0xd819c1d5354bdf904b0f9bd0bf8be40190de8ca099be1b33b562907f08000d43",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3fb3cbd97c7a2f16530ed977cbc675ef57c96363f67aee5fc21cf692894e873",
+				"dweb:/ipfs/QmfHTwtkFWKdzrTJNTz9eeuUNmQgjE5P94kQvskLPcGxVX"
+			]
+		}
+	},
+	"version": 1
+}

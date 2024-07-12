@@ -1,0 +1,129 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "contract SharkVault",
+						"name": "_sharkVault",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "attack",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "sharkVault",
+				"outputs": [
+					{
+						"internalType": "contract SharkVault",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Node-Guardian_Cream_Rkt/Src/Contracts/ReentrancyAttack.sol": "ReentrancyAttack"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/interfaces/IERC20.sol": {
+			"keccak256": "0xce41876e78d1badc0512229b4d14e4daf83bc1003d7f83978d18e0e56f965b9c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a2608291cb038b388d80b79a06b6118a42f7894ff67b7da10ec0dbbf5b2973ba",
+				"dweb:/ipfs/QmWohqcBLbcxmA4eGPhZDXe5RYMMEEpFq22nfkaUMvTfw1"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c",
+				"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq"
+			]
+		},
+		"Node-Guardian_Cream_Rkt/Src/Contracts/ReentrancyAttack.sol": {
+			"keccak256": "0xffcb93e3fbde3ff8683ffe35ad6bc89661dff798710e34b2f7787a5bf36411fa",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ec4797e4b7b36358d0f6cdcad43f54d43655b43582f040e7e77175a90a19c431",
+				"dweb:/ipfs/QmYTjJvaJfpuFsHQH2iZg6FtyoZjojgTZ1rSZarGqCn5ro"
+			]
+		},
+		"Node-Guardian_Cream_Rkt/Src/Contracts/SharkVault.sol": {
+			"keccak256": "0x4f1b44051f2bfa8ad864341449e8b5a76cb4af64a115a32e861a6d47697ccf04",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cf605ded3ff4996d7030408a6608dee00b1346a7447d32162458fd7f81c4b8a3",
+				"dweb:/ipfs/QmbQcNWJKgh6wXX9QpmjFPZYuMwquotgdLd9zazR6kzfy2"
+			]
+		}
+	},
+	"version": 1
+}

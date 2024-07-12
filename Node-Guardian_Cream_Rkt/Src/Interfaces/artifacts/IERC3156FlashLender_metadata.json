@@ -1,0 +1,159 @@
+{
+	"compiler": {
+		"version": "0.8.24+commit.e11b9ed9"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "flashFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "contract IERC3156FlashBorrower",
+						"name": "receiver",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "flashLoan",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					}
+				],
+				"name": "maxFlashLoan",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"flashFee(address,uint256)": {
+					"params": {
+						"amount": "The amount of tokens lent.",
+						"token": "The loan currency."
+					},
+					"returns": {
+						"_0": "The amount of `token` to be charged for the loan, on top of the returned principal."
+					}
+				},
+				"flashLoan(address,address,uint256,bytes)": {
+					"params": {
+						"amount": "The amount of tokens lent.",
+						"data": "Arbitrary data structure, intended to contain user-defined parameters.",
+						"receiver": "The receiver of the tokens, and the receiver of the flash callback.",
+						"token": "The loan currency."
+					}
+				},
+				"maxFlashLoan(address)": {
+					"params": {
+						"token": "The loan currency."
+					},
+					"returns": {
+						"_0": "The amount of `token` that can be borrowed."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"flashFee(address,uint256)": {
+					"notice": "The fee to be charged for a given loan."
+				},
+				"flashLoan(address,address,uint256,bytes)": {
+					"notice": "Initiate a flash loan."
+				},
+				"maxFlashLoan(address)": {
+					"notice": "The amount of currency available to be lent."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol": "IERC3156FlashLender"
+		},
+		"evmVersion": "shanghai",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Node-Guardian_Cream_Rkt/Src/Interfaces/IERC3156FlashBorrower.sol": {
+			"keccak256": "0xd819c1d5354bdf904b0f9bd0bf8be40190de8ca099be1b33b562907f08000d43",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e3fb3cbd97c7a2f16530ed977cbc675ef57c96363f67aee5fc21cf692894e873",
+				"dweb:/ipfs/QmfHTwtkFWKdzrTJNTz9eeuUNmQgjE5P94kQvskLPcGxVX"
+			]
+		}
+	},
+	"version": 1
+}
